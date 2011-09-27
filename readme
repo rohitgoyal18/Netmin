@@ -1,0 +1,21 @@
+Netmin is a project of Nettech Private Limited.
+
+At Nettech we are planning to come up with a shell based tool to do all the Server Administration, which we can give it to our future students along with webmin. Interested students are requested to download the .tar/.gz file & start working on the same. Nettech will acknowledge all contribution with a Certificate of Excellence & Credit on this page. 
+
+Important notes :
+
+1. download the .tar/.gz file, copy the same in server "/" location
+
+2. use the command "gzip -d netmin.tar.gz" to get a .tar file
+
+3. use the command "tar xvf netmin.tar" to extract the files from the .tar file
+
+4. make sure you have 755 in all the files, run ./netmin file to start the program
+
+5. open with vi or any other editor to do the necessary addition & modification
+
+6. for any clarification & submission email it to swapan[at]nettech.in with a note of your work.
+
+ 
+ 
+This is the Starting of this project. This file will be modified accordingly.
