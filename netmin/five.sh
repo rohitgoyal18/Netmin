@@ -1,0 +1,2 @@
+
+echo "Hello Mr. $LOGNAME"

@@ -1,0 +1,40 @@
+#!/bin/bash
+tput 10 10
+echo -n "Enter the ipaddress: "
+read ip
+tput 11 10
+echo -n "Enter the servername"
+read name
+tput 12 10
+echo -n "Enter Document Root"
+read root
+tput 13 10
+echo "select default port or specified one"
+tput 14 10
+echo "1.default"
+tput 15 10
+echo "2.selected"
+tput 16 10
+echo "3.any"
+read choice
+case $choice in 
+1) 
+echo "<VirtualHost $ip>">>/etc/httpd/conf/httpd.conf
+echo "DocumentRoot \"$root\"">>/etc/httpd/conf/httpd.conf
+echo "ServerName $name">>/etc/httpd/conf/httpd.conf
+echo "</VirtualHost>">>/etc/httpd/conf/httpd.conf;;
+2)
+echo "enter port"
+read port
+echo "<VirtualHost $ip:$port>">>/etc/httpd/conf/httpd.conf
+echo "DocumentRoot \"$root\"">>/etc/httpd/conf/httpd.conf
+echo "ServerName $name">>/etc/httpd/conf/httpd.conf
+echo "</VirtualHost>">>/etc/httpd/conf/httpd.conf;;
+3)
+
+echo "<VirtualHost $ip:*>">>/etc/httpd/conf/httpd.conf
+echo "DocumentRoot \"$root\"">>/etc/httpd/conf/httpd.conf
+echo "ServerName $name">>/etc/httpd/conf/httpd.conf
+echo "</VirtualHost>">>/etc/httpd/conf/httpd.conf;;
+esac
+
