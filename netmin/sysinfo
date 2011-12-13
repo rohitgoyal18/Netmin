@@ -1,0 +1,27 @@
+#!/bin/bash
+clear
+echo -e "Operating system is \033[31m`uname -s`\033[0m"
+sleep 1
+echo -e "Operating system's version is \033[31m`uname -v`\033[0m"
+sleep 1
+echo -e "Kernel's version is \033[31m`uname -r`\033[0m"
+sleep 1
+echo -e "System's hardware type is \033[31m`uname -m`\033[0m"
+sleep 1
+echo -e "System's processor type is \033[31m`uname -p`\033[0m"
+sleep 1
+echo -e "System's time is \033[31m`date`\033[0m"
+sleep 1
+echo -e "System's uptime is \033[31m`uptime`\033[0m"
+sleep 1
+echo -e "System's hostname is \033[31m$HOSTNAME\033[0m"
+sleep 1
+echo -e "Current user is \033[31m$USER\033[0m and user's id is \033[31m`id`\033[0m"
+sleep 1
+echo -e "User's home directory is \033[31m$HOME\033[0m and current work directory is \033[31m$PWD\033[0m"
+sleep 1
+echo -e "Details of users logged in this system are,
+\033[31m`finger`\033[0m"
+sleep 1
+echo -e "Current processes running on present terminal \033[31m`tty | gawk -F/ '{print $3}'`\033[0m are,
+\033[31m`ps`\033[0m"

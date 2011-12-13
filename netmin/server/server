@@ -1,0 +1,83 @@
+#!/bin/bash
+clear
+while [ 1 ]
+do
+clear
+disp1()
+{
+
+echo -e "\33[43m  Press Enter to Return to main Menu \33[0m"
+return
+}
+
+tput cup 4 20
+echo -e "\33[33m ************************** \33[0m"
+tput cup 5 20
+echo -e "\33[37m  Welcome to Netmin Project \33[0m"
+tput cup 6 20
+echo -e "\33[32m ************************** \33[0m"
+tput cup 7 20
+echo '--------------------------------------------------'
+tput cup 8 20
+echo '|  1.Info on Services Running Based On RunLevel`s  |'
+tput cup 9 20
+echo '|  2.Set Services On/Off-Current RunLevel          |'
+tput cup 10 20
+echo '|  3.Port Numbers Of all services*                 |'
+tput cup 11 20
+echo '|  4. Under Development                            |'
+tput cup 12 20
+echo '|  5. Under Development                            |'
+tput cup 13 20
+echo '|  Q. Quit                                         |'
+tput cup 30 30
+echo -e "\33[42mNote * With Respect to some aspects \33[0m"
+tput cup 14 20
+echo -e "\33[45m|  Enter your choice:                              |\33[0m"
+tput cup 15 20
+echo '--------------------------------------------------'
+tput cup 14 41
+read  choice
+case $choice in
+1)      
+        clear
+        chkconfig --list |more
+        disp1       
+        read;;
+
+2)      clear
+        ntsysv
+        disp1
+        read;;
+
+3)      clear
+        port |more
+        disp1
+        read;;
+4)      clear
+tput cup 10 20
+echo -e "\33[42m Option Under Construction...! \33[0m"
+tput cup 30 20
+        disp1
+        read;;
+
+5)      clear
+tput cup 10 20
+echo -e "\33[42m Option Under Construction...! \33[0m"
+tput cup 30 20
+        disp1
+        read ;;
+Q)
+
+        clear
+                exit;;
+
+q)
+        clear
+                exit;;
+*)
+echo -e "\33[35m  IMPROPER CHOICE \33[0m"
+echo -e "\33[41m  Press Enter to Continue...! \33[0m"
+        read id
+esac
+done

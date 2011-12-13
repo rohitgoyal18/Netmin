@@ -1,0 +1,188 @@
+#!/bin/bash
+clear
+while [ 1 ]
+do
+clear
+disp1()
+{
+echo -e "\33[43m  Press Enter to Return to main Menu \33[0m"
+return
+}
+
+tput cup 4 20
+echo -e "\33[33m ************************** \33[0m"
+tput cup 5 20
+echo -e "\33[37m  Welcome to Netmin Project \33[0m"
+tput cup 6 20
+echo -e "\33[32m ************************** \33[0m"
+tput cup 8 20
+echo '--------------------------------------------------'
+tput cup 9 20
+echo '|  1. Create and Delete Modify Users and Groups   |'
+tput cup 10 20
+echo '|  2. File System Backup                          |'
+tput cup 11 20
+echo '|  3. Software Packages                           |'
+tput cup 12 20
+echo '|  4. Running Processes                           |'
+tput cup 13 20
+echo '|  5. Scheduled Cron Jobs                         |'
+tput cup 14 20
+echo '|  6. Users Logged In,System Uptime & their task  |'
+tput cup 15 20 
+echo '|  7. Re-Nice Process                             |'
+tput cup 16 20
+echo '|  8. Disk Utility                                |'
+tput cup 17 20
+echo '|  9. Partition Info                              |'
+tput cup 18 20
+echo '|  10.Manual Pages                                |'
+tput cup 19 20
+echo '|  11.System Logs                                 |'
+tput cup 20 20
+echo '|  12.Kill Process                                |'  
+tput cup 21 20
+echo '|  Q. Quit                                        |'  
+tput cup 22 20
+echo -e "\33[45m  Enter your choice:                             \33[0m"
+tput cup 23 20
+echo '--------------------------------------------------'
+tput cup 22 40
+read  choice
+case $choice in
+	
+1) 	sh /netmin/Anand/system/userandgroup
+	tput cup 30 30
+        disp1
+	read;;
+
+2)      clear
+
+echo -e "\33[35m Note:Your Tar file will create directory structure as your path..!\33[0m"
+tput cup 8 0
+echo -e "\33[31m Enter the Path of a file/directory for backup: \33[0m"
+tput cup 8 47
+       read p
+tput cup 9 0
+echo -e "\33[42m Enter The Name  of  a  backup  tar file to be: \33[0m"
+tput cup 9 47
+read bp
+tar -zcvf $bp.tgz  $p
+
+	tput cup 30 30
+	disp1
+        read;;
+
+3)      sh /netmin/Anand/system/soft
+	tput cup 30 30
+disp1	
+read;;
+
+4)	sh /netmin/Anand/system/procs
+	tput cup 30 20
+disp1	
+read;;
+
+5)	sh /netmin/Anand/system/cron
+	tput cup 30 20
+disp1
+	tput cup 29 45
+          read ;;
+
+6)     clear
+tput cup 10 20
+echo -e "\33[41m Total Number Of Users Logged In: \33[0m"
+        w
+       tput cup 30 20
+disp1
+        read ;;
+
+7)      clear
+tput cup 5 20
+echo -e "\33[42m Enter the Process Name:\33[0m"
+tput cup 5 44
+read pi
+tput cup 8 20
+#echo -e "\33[43m Process id of given process Name: \33[0m"
+#tput cup 8 55
+pidof $pi
+renice -15 `pidof $pi`
+#sleep 5
+clear
+#top
+        tput cup 30 20
+disp1
+        read ;;
+
+8)      clear
+        
+tput cup 12 20 
+echo -e "\33[32m Disk Information of Your System \33[0m"
+df -h
+disp1
+        read ;;
+
+9)      clear
+tput cup 10 20
+echo -e "\33[42m  Partition On Your System  \33[0m"
+ fdisk -l
+echo -e "\33[47m  * Indicates Your Primary Partition...! \33[0m"
+        tput cup 30 20
+disp1
+        read ;;
+
+10)     clear
+tput cup 2 20
+echo -e "\33[33m ************************** \33[0m"
+tput cup 3 20
+echo -e "\33[37m   Manual Page For Users: \33[0m"
+tput cup 4 20
+echo -e "\33[32m ************************** \33[0m"
+tput cup 6 0
+echo -e "\33[42mFor which command do you want to get man page: \33[0m"
+tput cup 6 46
+read cc
+man $cc
+tput cup 30 20
+disp1
+        read ;;
+
+11)     clear
+  tput cup 5 20
+echo -e "\33[42m System Message last 10 message....!  \33[0m"
+echo -e "\33[45m To Check Entire Log Message check:/var/log/messages \33[0m"
+tail -10 /var/log/messages
+tput cup 25 20
+disp1
+       read ;;
+
+12)     clear
+tput cup 5 20
+echo -e "\33[42m Enter The Process Name to be Killed  \33[0m"
+tput cup 5 58
+read k
+tput cup 10 20
+kill -9 `pidof $k`
+echo -e "\33[42m Process Has Been Killed  \33[0m"
+tput cup 30 20
+disp1
+       read ;;
+
+Q)     clear
+
+
+	clear 
+		exit;;
+
+q)
+	clear
+	        exit;;
+
+*)	tput cup 30 20
+echo -e "\33[35m  IMPROPER CHOICE \33[0m"
+	tput cup 31 20
+echo -e "\33[41m  Press Enter to Continue...! \33[0m"
+	read id
+esac
+done
+

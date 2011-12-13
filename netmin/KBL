@@ -1,0 +1,333 @@
+
+#set -v
+set nu
+
+clear
+A="\033[36m\n\tSAHI JWAB.\033[5m\n\tCONGRAULATIONS. YOU HAVE WON\033[0m"
+B="\033[35m\n\tAFSOS, GALAT JWAB.\n\tYOU HAVE LOST 50% OF CURRENT AMOUNT.\n\tNOW  YOU HAVE\033[0m"
+C="\033[0m\n\tOK\n\tCONGRAULATIONS YOU HAVE WON."
+
+
+
+x="!KAUN BANEGA LINUXPATI!"
+D="\n\tAnswer is"
+
+
+a1="\033[33m\t1. What is the name of the Linux installer ?\033[32m\n\n\ta. anaconda\tb. donkey\n\tc. tiger\td. elephent\033[31m\n\n\tq.If you want to QUIT\033[0m\n\n\tans ="
+a2="\033[33m\t2. What is the linux boot loader ?\033[32m\n\n\ta. lilo\t\tb. LILO\n\tc. PILO\t\td. pilo\033[31m\n\n\tq.If you want to QUIT\033[0m\n\n\tans ="
+a3="\033[33m\t3. Where is the source code of the Linux kernel ?\033[32m\n\n\ta. /usr/src/linux-2.4\tb. /var/src/linux-2.4\n\tc. /usr/bin/linux-2.4\td. /usr/sbin/linux-2.4\033[31m\n\n\tq.If you want to QUIT\033[0m\n\n\tans ="
+a4="\033[33m\t4.  Which binary/daemon reads the /etc/inittab file?\033[32m\n\n\ta. initab\tb. initlog\n\tc. initvar\td. init\033[31m\n\n\tq.If you want to QUIT\033[0m\n\n\tans ="
+a5="\033[33m\t5. How many runlevels are there ?\033[32m\n\n\ta. 5\tb. 6\n\tc. 7\td. 8\033[31m\n\n\tq.If you want to QUIT\033[0m\n\n\tans ="
+a6="\033[33m\t6. Which script calls the /etc/rc.d/rc script ?\033[32m\n\n\ta. /etc/inittab\t\tb. /etc/rc.d\n\tc. /etc/rc.sysinit\td. /etc/init.d\033[31m\n\n\tq.If you want to QUIT\033[0m\n\n\tans ="
+a7="\033[33m\t7. How many 'shell functions' are defined in the shell script
+      \n\t\t '/etc/init.d/functions' ?\033[32m\n\n\ta. 16\tb. 17\n\tc. 18\td. 19\033[31m\n\n\tq.If you want to QUIT\033[0m\n\n\tans ="
+a8="\033[33m\t8.  What is Runlevel 1 ?\033[32m\n\n\ta. halt\t\tb. reboot\n\tc. safe mode\td. user-defined\033[31m\n\n\tq.If you want to QUIT\033[0m\n\n\tans ="
+a9="\033[33m\t9. How would you view the messages in /var/log/dmesg file ?\033[32m\n\n\ta. log\t\tb. var\n\tc. mesg\t\td. dmesg\033[31m\n\n\tq.If you want to QUIT\033[0m\n\n\tans ="
+a10="\033[33m\t10. Where is the default global PATH variable set ?\033[32m\n\n\ta. /etc/init.d/functions\tb. /etc/functions\n\tc. /etc/init.d/firstboot\td. /etc/firstboot\033[31m\n\n\tq.If you want to QUIT\033[0m\n\n\tans ="
+a11="\033[33m\t11.  How many mingettys are started by default ?\033[32m\n\n\ta. 5\tb. 6\n\tc. 7\td. 8\033[31m\n\n\tq.If you want to QUIT\033[0m\n\n\tans ="
+a12="\033[33m\t12. Which file is first executed by /bin/bash ?\033[32m\n\n\ta. /etc/profile.d\tb. /etc/profile\n\tc. /etc/protocols\td. /etc/printcap\033[31m\n\n\tq.If you want to QUIT\033[0m\n\n\tans ="
+a13="\033[33m\t13. Which file disable all users from loging in ?\033[32m\n\n\ta. /etc/login\t\tb. /sbin/login\n\tc. /sbin/nologin\td. /etc/nologin\033[31m\n\n\tq.If you want to QUIT\033[0m\n\n\tans ="
+a14="\033[33m\t14. Which file user use to make an alias ?\033[32m\n\n\ta. .bashrc\tb. bash_profile\n\tc. .profile\td. profile\033[31m\n\n\tq.If you want to QUIT\033[0m\n\n\tans ="
+a15="\033[33m\t15. where is the default command prompt set ?\033[32m\n\n\ta. /etc/bash\tb. /etc/bluetooth\n\tc. /etc/bashrc\td. /etc/profile\033[31m\n\n\tq.If you want to QUIT\033[0m\n\n\tans ="
+
+tput cup 5 23
+echo -e "\033[7m$x\033[0m"
+vashi()
+{  
+tput cup 5 23
+echo -e "\033[7m$x\033[0m"
+}
+count=500
+car()
+{
+   let "count = count*2"
+}
+auto()
+{
+   let "count = count/2"
+}
+
+tput cup 8 19
+echo -e "\033[32mWELCOME TO KAUN BANEGA LINUXPATI\033[0m"
+tput cup 10 4
+echo INSTUCTIONS :
+tput cup 12 4
+echo -e \* Each question has 4 options. You have to choose one.
+tput cup 14 4
+echo -e \* Starting with 1000 Rs.
+tput cup 16 4
+echo -e \* For every right answer you will get double of the current amount.
+tput cup 18 4
+echo -e \* For every wrong answer you will lost 50% of the current amount.
+tput cup 20 4
+echo -e \* If you want to quit press q.
+tput cup 24 29
+echo -e "\033[5m\033[36mBEST OF LUCK\033[0m"
+read
+clear
+vashi
+tput cup 12 0
+echo -e $a1
+tput cup 19 14
+read ans
+case $ans in
+    a)car 
+      echo -e $A  $count Rs. 
+      ;;
+    q)echo -e $C  $count Rs. ____ GOOD BI.
+      exit
+      ;;
+    *)auto
+      echo -e $B  $count Rs.
+      echo -e $D anaconda.
+esac
+read
+clear 
+vashi
+
+tput cup 12 0
+echo -e $a2
+tput cup 19 14
+read ans
+case $ans in
+    b)car
+      echo -e $A  $count Rs
+      ;;
+    q)echo -e $C  $count Rs. ____ GOOD BI.
+      exit ;;
+    *)auto
+      echo -e $B  $count Rs.
+      echo -e $D LILO     
+esac
+read
+clear
+vashi
+
+tput cup 12 0
+echo -e $a3
+tput cup 19 14
+read ans
+case $ans in
+    a)car
+      echo -e $A  $count Rs
+       ;;
+    q)echo -e $C  $count Rs. ____ GOOD BI.
+      exit ;;
+    *)auto
+      echo -e $B  $count Rs.
+      echo -e $D /usr/src/linux-2.4
+esac
+read
+clear
+vashi
+tput cup 12 0
+echo -e $a4
+tput cup 19 14
+read ans
+case $ans in
+    d)car
+      echo -e $A  $count Rs
+      ;;
+    q)echo -e $C  $count Rs. ____ GOOD BI.
+      exit ;;
+    *)auto
+      echo -e $B  $count Rs.
+      echo -e $D init
+esac
+read
+clear
+vashi
+tput cup 12 0
+echo -e $a5
+tput cup 19 14
+read ans
+case $ans in
+    c)car
+      echo -e $A  $count Rs
+      ;;
+    q)echo -e $C  $count Rs. ____ GOOD BI.
+      exit ;;
+    *)auto
+      echo -e $B  $count Rs.
+      echo -e $D 7
+esac
+read
+clear
+vashi
+
+tput cup 12 0
+echo -e $a6
+tput cup 19 14
+read ans
+case $ans in
+    a)car
+      echo -e $A  $count Rs
+      ;;
+    q)echo -e $C  $count Rs. ____ GOOD BI.
+      exit
+      ;;
+    *)auto
+      echo -e $B  $count Rs.
+      echo -e $D /etc/inittab
+esac
+read
+clear
+vashi
+
+tput cup 12 0
+echo -e $a7
+tput cup 20 14
+read ans
+case $ans in
+    b)car
+      echo -e $A  $count Rs
+      ;;
+    q)echo -e $C  $count Rs. ____ GOOD BI.
+      exit ;;
+    *)auto
+      echo -e $B  $count Rs.
+      echo -e $D 17
+esac
+read
+clear
+vashi
+
+tput cup 12 0
+echo -e $a8
+tput cup 19 14
+read ans
+case $ans in
+    c)car
+      echo -e $A  $count Rs
+      ;;
+    q)echo -e $C  $count Rs. ____ GOOD BI.
+      exit ;;
+    *)auto
+      echo -e $B  $count Rs.
+      echo -e $D safe mode
+esac
+read
+clear
+vashi
+
+tput cup 12 0
+echo -e $a9
+tput cup 19 14
+read ans
+case $ans in
+    d)car
+      echo -e $A  $count Rs
+      ;;
+    q)echo -e $C  $count Rs. ____ GOOD BI.
+      exit ;;
+    *)auto
+      echo -e $B  $count Rs.
+      echo -e $D dmesg
+esac
+read
+clear
+vashi
+tput cup 12 0
+echo -e $a10
+tput cup 19 14
+read ans
+case $ans in
+    a)car
+      echo -e $A  $count Rs
+       ;;
+    q)echo -e $C  $count Rs. ____ GOOD BI.
+      exit ;;
+    *)auto
+      echo -e $B  $count Rs.
+      echo -e $D /etc/init.d/functions
+esac
+read
+clear
+vashi
+tput cup 12 0
+echo -e $a11
+tput cup 19 14
+read ans
+case $ans in
+    b)car
+      echo -e $A  $count Rs
+       ;;
+    q)echo -e $C  $count Rs. ____ GOOD BI.
+      exit ;;
+    *)auto
+      echo -e $B  $count Rs.
+      echo -e $D 6
+esac
+read
+clear
+vashi
+tput cup 12 0
+echo -e $a12
+tput cup 19 14
+read ans
+case $ans in
+    b)car
+      echo -e $A  $count Rs
+      ;;
+    q)echo -e $C  $count Rs. ____ GOOD BI.
+      exit ;;
+    *)auto
+      echo -e $B  $count Rs.
+      echo -e $D /etc/profile
+esac
+read
+clear
+vashi
+tput cup 12 0
+echo -e $a13
+tput cup 19 14
+read ans
+case $ans in
+    d)car
+      echo -e $A  $count Rs
+      ;;
+    q)echo -e $C  $count Rs. ____ GOOD BI.
+      exit ;;
+    *)auto
+      echo -e $B  $count Rs.
+      echo -e $D /etc/nologin
+esac
+read
+clear
+vashi
+tput cup 12 0
+echo -e $a14
+tput cup 19 14
+read ans
+case $ans in
+    a)car
+      echo -e $A  $count Rs
+      ;;
+    q)echo -e $C  $count Rs. ____ GOOD BI.
+      exit ;;
+    *)auto
+      echo -e $B  $count Rs.
+      echo -e $D .bashrc
+esac
+read
+clear
+vashi
+tput cup 12 0
+echo -e $a15
+tput cup 19 14
+read ans
+case $ans in
+    c)car
+      echo -e $A  $count Rs
+      ;;
+    q)echo -e $C  $count Rs. ____ GOOD BI.
+      exit ;;
+    *)auto
+      echo -e $B  $count Rs.
+      echo -e $D /etc/bashrc
+esac
+exit
+
+
+
+

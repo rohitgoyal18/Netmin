@@ -1,0 +1,22 @@
+
+#!/bin/bash
+clear
+tput cup 10 30
+printf "Name the user whose password is to be changed: "
+read user
+if  `grep -w $user /etc/passwd >>/dev/null`
+then
+tput cup 11 30
+echo -n "Enter the password : "
+stty -echo
+read pass
+stty sane
+tput cup 12 30
+echo $pass | passwd --stdin $user>>output
+stty sane
+tput cup 16 30
+echo "User $user 's password successfully changed"
+else
+tput cup 29 30
+echo "User $user not exist"
+fi

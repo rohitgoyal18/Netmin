@@ -1,0 +1,16 @@
+#!/bin/bash
+clear
+echo "Enter the group name"
+read n
+if 'grep -w $n /etc/group >>/dev/null'
+then
+clear
+        tput cup 10 30
+        echo "$n exists!"
+        echo -e "\33[37m Plz Give Any Other Groupname...!\33[0m"
+        exit [1]
+else
+groupadd $n
+usermod -G $n mango
+fi
+
