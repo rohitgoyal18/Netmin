@@ -1,0 +1,89 @@
+#!/bin/bash
+clear
+while [ 1 ]
+do
+clear
+echo
+echo
+echo
+tput cup 9 30
+echo '--------------------------------------------------'
+tput cup 10 30
+echo '|  1. Query for all Packages installed           |'
+tput cup 11 30
+echo '|  2. Query for specific packages                |'
+tput cup 12 30
+echo '|  3. Install packages                           |'
+tput cup 13 30
+echo '|  4. Userdefined manuall command interface      |'
+tput cup 14 30
+echo '|  Q. Quit                                       |'
+tput cup 15 30
+echo '|  Enter your choice :                           |'
+tput cup 16 30
+echo '--------------------------------------------------'
+tput cup 15 52
+read  choice
+case $choice in
+
+1)      clear
+	rpm -qa|more
+        tput cup 30 30
+        echo "Press enter to return to main menu. "
+        read;;
+
+2)      clear
+	tput cup 10 30
+	echo "Enter Package name :"
+	 tput cup 10 52
+	read pack
+	clear
+	 tput cup 10 0
+	rpm -iq $pack
+        tput cup 30 30
+        echo "Press enter to return to main menu. "
+        read;;
+
+3)      clear
+	tput cup 10 30
+	echo "Enter the full Path or http or ftp address for the package to install:"
+	tput cup 11 30
+	echo "For local files enter "/home/apple/example.rpm" as path name"
+	tput cup 12 30
+	echo "For ftp files enter "ftp://rpmfind/example.rpm" as path name"
+	tput cup 13 30
+	echo "For http files enter "http://rpmfind/example.rpm" as path name"
+	tput cup 15 30
+	read -p "Enter Path : " path
+	tput cup 16 30
+	rpm -ivh $path
+        tput cup 30 30
+        echo "Press enter to return to main menu. "
+        read;;
+
+
+4)      clear 
+	tput cup 10 30
+	echo "Enter the rpm command argument to execute"
+	tput cup 11 30
+	read -p "rpm " argument
+	tput cup 12 30
+	rpm $argument
+        tput cup 30 30
+        echo "Press enter to return to main menu. "
+        read;;
+Q)
+
+        clear
+                exit;;
+
+q)
+        clear
+                exit;;
+
+*)
+        echo "IMPROPER CHOICE"
+        echo "Press Enter to continue"
+        read id
+esac
+done

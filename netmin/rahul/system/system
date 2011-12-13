@@ -1,0 +1,123 @@
+#!/bin/bash
+clear
+while [ 1 ]
+do
+clear
+echo
+echo 
+echo
+tput cup 9 30
+echo '--------------------------------------------------'
+tput cup 10 30
+echo '|  1. Create and Delete Modify Users and Groups   |'
+tput cup 11 30
+echo '|  2. File System Backup                          |'
+tput cup 12 30
+echo '|  3. Software Packages                           |'
+tput cup 13 30
+echo '|  4. Running Processes                           |'
+tput cup 14 30
+echo '|  5. Scheduled Cron Jobs                         |'
+tput cup 15 30
+echo '|  6. Scheduled Commands                          |'
+tput cup 16 30 
+echo '|  7. Bootup and Shutdown Actions                 |'
+tput cup 17 30
+echo '|  8. Disk Quota                                  |'
+tput cup 18 30
+echo '|  9. Disk and Network filesystem                 |'
+tput cup 19 30
+echo '|  10.Manual Pages                                |'
+tput cup 20 30
+echo '|  11.System Logs                                 |'
+tput cup 21 30
+echo '|  Q. Quit                                        |'  
+tput cup 22 30
+echo '|  P. Previous Menu			        |'
+tput cup 23 30
+echo '|  Enter your choice :                            |'
+tput cup 24 30
+echo '--------------------------------------------------'
+tput cup 23 55 
+read  choice
+case $choice in
+	
+1) 	sh /netmin/rahul/system/userandgroup
+	tput cup 30 30
+	echo "Press enter to return to the menu. "
+	read;;
+
+2) 	sh /netmin/rahul/system/fsback	
+	tput cup 30 30
+	echo "Press enter to return to the menu. "
+	read;;
+
+3)      sh /netmin/rahul/system/soft
+	tput cup 30 30
+	echo "Press enter to return to the menu "
+	read;;
+
+4)	sh /netmin/rahul/system/procs
+	tput cup 30 30
+	echo "Press enter to return to the menu. "
+	read;;
+
+5)	sh /netmin/rahul/system/cronsj
+	tput cup 30 30
+	echo " Press enter to return to the menu. "
+	read ;;
+
+6)      sh /netmin/rahul/system/comman
+        tput cup 30 30
+	echo " Press enter to return to the menu. "
+        read ;;
+
+7)      sh /netmin/rahul/system/bootshut
+        tput cup 30 30
+	echo " Press enter to return to the menu. "
+        read ;;
+
+8)      sh /netmin/rahul/system/diskq
+        tput cup 30 30
+	echo " Press enter to return to the menu. "
+        read ;;
+
+9)      sh /netmin/rahul/system/diskn
+        tput cup 30 30
+	echo " Press enter to return to the menu. "
+        read ;;
+
+10)     sh /netmin/rahul/system/manual
+        tput cup 30 30
+	echo " Press enter to return to the menu. "
+        read ;;
+
+11)     sh /netmin/rahul/system/systemlog
+        tput cup 30 30
+	echo " Press enter to return to the menu. "
+        read ;;
+P)
+
+        clear
+                exit;;
+p)
+
+        clear
+                exit;;
+Q)
+
+	clear 
+		exit [2];;
+
+q)
+	clear
+	        exit [2];;
+
+*)	tput cup 30 30
+	echo "IMPROPER CHOICE"
+	tput cup 31 30
+	echo "Press Enter to continue"
+	read id
+esac
+done
+

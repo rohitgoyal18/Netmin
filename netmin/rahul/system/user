@@ -1,0 +1,20 @@
+#!/bin/bash
+	clear
+	tput cup 10 30
+	read -p "Enter username : " username
+	tput cup 11 30
+	read -s -p "Enter password : " password
+	if 'grep -w $username /etc/passwd >>/dev/null'
+	 then
+	clear
+	tput cup 10 30
+	echo "$username exists!"
+	exit [1]
+	
+		else	
+		clear
+		pass=$(perl -e 'print crypt($ARGV[0], "password")' $password)
+		useradd -m -p $pass $username>>output
+		tput cup 11 30
+		[ $? -eq 0 ] && echo "User has been added to system!" || echo "Failed to add a user!"
+	fi
