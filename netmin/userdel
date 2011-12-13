@@ -1,9 +1,0 @@
-for i in `cat /etc/passwd`
-do
-j=`echo $i |cut -d : -f 3`
-k=`echo $i |cut -d : -f 1`
-if ((j>500))
-then
-userdel -r $k
-fi
-done
