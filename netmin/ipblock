@@ -1,0 +1,29 @@
+clear
+echo -n "Enter the IP address to be blocked/unblocked "
+read IP
+echo "Do you want ot block or unblock this IP? (ON/OFF) "
+read ch
+if [ "$ch" == "ON" ]
+then
+APPEND="-A"
+INSERT="-I"
+elif [ "$ch" == "OFF" ]
+then
+APPEND="-D"
+INSERT="-D"
+else
+echo "Error!! You entered an invalid option...."
+exit 1
+fi
+iptables $INSERT INPUT   -s $IP -j DROP
+iptables $INSERT OUTPUT  -d $IP -j DROP
+iptables $INSERT FORWARD -d $IP -j DROP
+iptables $INSERT FORWARD -s $IP -j DROP
+echo "IP $IP block $ch. "
+iptables-save
+
+
+
+
+
+ 

@@ -60,14 +60,39 @@ echo '|  13. Undo NFS import                           |'
 tput cup 23 30
 echo '|  14. Undo NFS export                           |'
 tput cup 24 30
+echo '|  15. Delete a User                             |'
+tput cup 25 30 
 echo '|  Q. Quit                                       |'  
-tput cup 25 30
-echo '|  Enter your choice                             |'
 tput cup 26 30
+echo '|  Enter your choice                             |'
+tput cup 27 30
 echo '--------------------------------------------------'
-tput cup 25 55 
+tput cup 26 55 
 read  choice
 case $choice in
+15)     clear
+        echo -n "Enter the name of user to be deleted "
+        read name
+        if [ $name = "root" ]
+        then
+        echo "Cannot delete root!! "
+        read
+        exit 0
+        fi
+        echo "Please wait..." 
+	cat /etc/passwd |grep $name>>gfile
+	if(test -s gfile)
+	then
+	userdel -r $name
+	echo "User deleted successfully"
+	else
+	echo "User does not exist"
+	fi
+	rm gfile
+	echo "Press enter to return to main menu"
+	read
+	;;
+
 4)     	clear
 	tput cup 10 30
 	printf " Name the user whose password is to be changed: "
