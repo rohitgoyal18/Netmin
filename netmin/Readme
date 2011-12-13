@@ -1,0 +1,27 @@
+LOgin
+username: mango
+Password: nettech
+
+
+
+Sir this is a Starting script I have prepared for the Project NETMIN
+This only contains the menu and submenus 
+It also contains a script for change password unser system Menu.
+I would like to get suggestions from you for the development of this project.
+I would like to know if some new menu or options to be added into it.
+
+I am trying it to make like Webmin.
+Trying to give the same functionality and options in Netmin also 
+
+
+Change Passwords
+Since there are different no of users in different Unix System, so it is not possible to create a static script to work in all systems.
+So this function creates its own temporary script based on the system and add all the users and gives the option to change password.(somewhat like Webmin)
+
+If any other way is possible then please suggest.
+
+My Details are
+Ayush Ghosh 
+ayush_ghosh@ymail.com
+Nettech Login Id 491615
+SMIT 
