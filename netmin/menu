@@ -17,7 +17,7 @@ echo '|  3. NETWORK OPTIONS                            |'
 tput cup 13 30
 echo '|  4. HARDWARE OPTIONS                           |'
 tput cup 14 30
-echo '|  5. OTHER IPTIONS                              |'
+echo '|  5. OTHER OPTIONS                              |'
 tput cup 15 30
 echo '|  Q. Quit                                       |'  
 tput cup 16 30
@@ -32,11 +32,11 @@ case $choice in
 	echo "Press enter to return to main menu. "
 	read;;
 
-2) 	./server	
+2) 	sh /netmin/rahul/server/server.sh	
 	echo "Press enter to return to main menu. "
 	read;;
 
-3)      ./network
+3)      sh /netmin/rahul/network/network.sh
 	echo"Press enter to return to main menu "
 	read;;
 

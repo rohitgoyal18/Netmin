@@ -1,0 +1,3 @@
+echo "Enter the user whose jobs you want to see"
+read user 
+crontab -u $user -l

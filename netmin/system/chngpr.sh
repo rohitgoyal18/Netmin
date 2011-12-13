@@ -1,0 +1,11 @@
+echo "Enter the name of the user" 
+read name
+echo "Enter the new primary group"
+read gpname 
+grep $gpname /etc/group 
+if [ $? -ne 0 ] 
+then 
+echo "Group does not exist"
+exit 2 
+fi 
+sed -n "/$name/s/$old/$new/4" /etc/passwd 

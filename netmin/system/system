@@ -31,12 +31,18 @@ echo '|  10.Manual Pages                                |'
 tput cup 20 30
 echo '|  11.System Logs                                 |'
 tput cup 21 30
-echo '|  Q. Quit                                        |'  
+echo '|  12.Delete a user				|'
 tput cup 22 30
-echo '|  P. Previous Menu			        |'
+echo '|  13.Delete a group				|'
 tput cup 23 30
-echo '|  Enter your choice :                            |'
+echo '|  14.Modify user 				|'
 tput cup 24 30
+echo '|  Q. Quit                                        |'  
+tput cup 25 30
+echo '|  P. Previous Menu			        |'
+tput cup 26 30
+echo '|  Enter your choice :                            |'
+tput cup 27 30
 echo '--------------------------------------------------'
 tput cup 23 55 
 read  choice
@@ -57,17 +63,17 @@ case $choice in
 	echo "Press enter to return to the menu "
 	read;;
 
-4)	sh /netmin/rahul/system/procs
+4)	sh /netmin/rahul/system/process.sh
 	tput cup 30 30
 	echo "Press enter to return to the menu. "
 	read;;
 
-5)	sh /netmin/rahul/system/cronsj
+5)	sh /netmin/rahul/system/cronmenu.sh
 	tput cup 30 30
 	echo " Press enter to return to the menu. "
 	read ;;
 
-6)      sh /netmin/rahul/system/comman
+6)      sh /netmin/rahul/system/schcomm.sh
         tput cup 30 30
 	echo " Press enter to return to the menu. "
         read ;;
@@ -96,6 +102,22 @@ case $choice in
         tput cup 30 30
 	echo " Press enter to return to the menu. "
         read ;;
+
+12)	sh /netmin/rahul/system/userdl.sh
+	tput cup 30 30
+	echo " Press enter to return to the menu. "
+	read ;;
+
+13)	sh /netmin/rahul/system/groupdl.sh
+	tput cup 30 30
+	echo " Press enter to return to the menu. "
+	read ;;
+
+14)	sh /netmin/rahul/system/modify.sh
+	tput cup 30 30
+	echo " Press enter to return to the menu. "
+	read ;;
+
 P)
 
         clear
