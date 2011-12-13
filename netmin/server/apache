@@ -1,0 +1,11 @@
+echo "enter d name of domain to be hosted" ;
+read name;
+echo "enter d document root" ;
+read root ;
+echo "enter d address" ;
+read add ;
+echo " <VirtualHost $add >
+DocumentRoot \"$root\"
+ServerName $name
+</VirtualHost>" | cat >> /etc/httpd/conf/httpd.conf;
+service httpd restart;

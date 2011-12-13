@@ -1,28 +1,20 @@
 #!/bin/bash
 clear
-
-tput cup 4 20
-echo -e "\33[33m ************************** \33[0m"
-tput cup 5 20
-echo -e "\33[37m  Welcome to Netmin Project \33[0m"
-tput cup 6 20
-echo -e "\33[32m ************************** \33[0m"
-tput cup 12 0
-echo -e "\33[45m  Enter the name of the group:\33[0m"
-tput cup 12 30
+tput cup 10 30
+echo -n "Enter the name of the group:"
 read group
 if  `grep $group /etc/group >>/dev/null`
 then
-tput cup 11 20
+tput cup 11 30
 echo "group already exixts "
-tput cup 12 20
+tput cup 12 30
 echo -n "press enter to return to main menu "
 read
 else
 groupadd $group 2>/dev/null
-tput cup 11 20
+tput cup 11 30
 echo "Group successfully created"
-tput cup 12 20
+tput cup 12 30
 echo -n "Press enter to continue. "
 read
 fi

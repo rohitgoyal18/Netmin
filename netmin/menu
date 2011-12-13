@@ -3,70 +3,49 @@ clear
 while [ 1 ]
 do
 clear
-disp1()
-{
-
-echo -e "\33[43m  Press Enter to Return to main Menu \33[0m"
-return
-}
-disp()
-{
-tput cup 4 20
-echo -e "\33[33m ************************** \33[0m"
-tput cup 5 20
-echo -e "\33[37m  Welcome to Netmin Project \33[0m"
-tput cup 6 20
-echo -e "\33[32m ************************** \33[0m"
-return 
-}
-disp
-tput cup 7 20
+echo
+echo 
+echo
+tput cup 9 30
 echo '--------------------------------------------------'
-tput cup 8 20
-echo '|  1. SYSTEM OPTIONS                             |'
-tput cup 9 20
+tput cup 10 30
+echo '|  1. SYSTEM OPTION	                       |'
+tput cup 11 30
 echo '|  2. SERVER OPTIONS                             |'
-tput cup 10 20
+tput cup 12 30
 echo '|  3. NETWORK OPTIONS                            |'
-tput cup 11 20
+tput cup 13 30
 echo '|  4. HARDWARE OPTIONS                           |'
-tput cup 12 20
-echo '|  5. OTHER OPTIONS                              |'
-tput cup 13 20
+tput cup 14 30
+echo '|  5. OTHER IPTIONS                              |'
+tput cup 15 30
 echo '|  Q. Quit                                       |'  
-tput cup 14 20
-echo -e "\33[45m|  Enter your choice:                            |\33[0m"
-tput cup 15 20
+tput cup 16 30
+echo '|  Enter your choice:                            |'
+tput cup 17 30
 echo '--------------------------------------------------'
-tput cup 14 41 
+tput cup 16 54 
 read  choice
 case $choice in
 	
-1) 	sh /netmin/Anand/system/system
-        disp1
+1) 	sh /netmin/rahul/system/system
+	echo "Press enter to return to main menu. "
 	read;;
 
-2) 	sh /netmin/Anand/server/server
-        disp1  
+2) 	./server	
+	echo "Press enter to return to main menu. "
 	read;;
 
-3)      sh /netmin/Anand/network/network
-        disp1
-        read;;
-4)	sh /netmin/Anand/hardware/hardware
-        disp1
+3)      ./network
+	echo"Press enter to return to main menu "
 	read;;
 
-5)	clear
-        sh /netmin/Anand/fsh
-#tput cup 10 20
-#echo -e "\33[7m Enter the Service Name to be restarted: \33[0m"
-#tput cup 10 61
-#read si
-#service $si restart
+4)	./hardware
+	echo "Press enter to return to the main menu. "
+	read;;
 
-tput cup 30 20
- disp1
+5)	./other
+	echo " Press enter to return to the main menu. "
 	read ;;
 
 Q)
@@ -79,9 +58,9 @@ q)
 	        exit;;
 
 *)
-echo -e "\33[35m  IMPROPER CHOICE \33[0m"
-echo -e "\33[41m  Press Enter to Continue...! \33[0m"
-read id;;
+	echo "IMPROPER CHOICE"
+	echo "Press Enter to continue"
+	read id
 esac
 done
 

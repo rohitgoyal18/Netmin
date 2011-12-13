@@ -1,0 +1,24 @@
+echo Enter name of the Domain:
+read name
+echo Enter the addres:
+read add
+echo "enter the email id(put a . in place of @):"
+read id
+echo "enter 10 digit serial number(random)"
+read serial
+echo "\$ttl 38400
+$name.		IN	SOA	Sun. $id (
+			$serial
+			10800
+			3600
+			604800
+			38400 )
+$name.		IN	NS	Sun.
+$name.		IN	A	$add"| cat >> /var/named/$name.hosts
+
+echo " zone \"$name\" {
+	type master;
+	file \"/var/named/$name.hosts\";
+	};" |cat >> /etc/named.conf
+
+rndc reload

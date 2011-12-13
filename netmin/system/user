@@ -9,7 +9,6 @@
 	clear
 	tput cup 10 30
 	echo "$username exists!"
-        echo -e "\33[37m Plz Give Any Other Username...!\33[0m"
 	exit [1]
 	
 		else	
@@ -17,5 +16,5 @@
 		pass=$(perl -e 'print crypt($ARGV[0], "password")' $password)
 		useradd -m -p $pass $username>>output
 		tput cup 11 30
-		[ $? -eq 0 ] && echo "User Has Been Added Successfully" || echo "added a user!"
+		[ $? -eq 0 ] && echo "User has been added to system!" || echo "Failed to add a user!"
 	fi

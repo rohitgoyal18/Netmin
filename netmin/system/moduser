@@ -1,9 +1,11 @@
 #!/bin/bash
-clear
-echo -e "\33[32m The User & Their Details In The System: \33[0m"
-echo -e "\33[42m _______________________________________\33[0m"
+echo "The Users and there details in the system are:"
+echo "______________________________________________"
+
+
+
 echo "User  UserName  Userid  Groupid  Shell  HomeDirectory  maxTimeExpire  SecondaryGroups"
 echo "----  --------  ------  -------  -----  -------------  -------------  ---------------"
-awk -F: '{print $1,$3,$4,$5}' /etc/passwd |more
+awk -F: '{print $1,$3,$4,$5}' /etc/passwd
 
 
