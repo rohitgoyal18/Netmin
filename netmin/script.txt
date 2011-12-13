@@ -1,0 +1,72 @@
+#!/bin/bash
+clear
+echo "What do you want to do? "
+echo "1) Create a user."
+echo "2) Create a group."
+echo "3) Delete a user."
+echo "4) Delete a group."
+echo "5) Enter a DNS Record."
+echo "6) Create a Virtual Host(Apache Server)."
+echo "7) Create a Samba Share."
+echo "8) Create a cronjob."
+echo "9) More options..."
+echo "Enter your choice (1-9) : "
+read choice
+
+if test $choice -eq 1
+then
+echo "Enter username : "
+read user
+useradd $user
+clear
+passwd $user
+echo "User created successfully"
+
+elif test $choice -eq 2
+then 
+echo "Enter group name : "
+read group
+groupadd $group
+clear
+echo "Group created successfully"
+
+elif test $choice -eq 3
+then
+echo "Enter username to delete : "
+read user
+userdel -r $user
+clear
+echo "User deleted successfully"
+
+
+elif test $choice -eq 4
+then
+echo "Enter groupname to delete : "
+read group
+groupdel $group
+clear
+echo "group deleted successfully"
+
+elif test $choice -eq 5
+then
+./named
+
+
+elif test $choice -eq 6
+then 
+./httpd
+
+
+elif test $choice -eq 7
+then
+./samba
+
+elif test $choice -eq 8
+then
+./cron
+
+else test $choice -eq 9
+./other
+fi
+
+

@@ -1,0 +1,19 @@
+#!/bin/bash
+clear
+echo "Enter specific ip-address : "
+read ip
+echo "Enter the document root : "
+read root
+echo "Enter the domain name : "
+read name
+echo "<VirtualHost $ip>
+	DocumentRoot \"$root\"
+	ServerName $name
+	<Directory \"$root\">
+	allow from all
+	Options +Indexes
+	</Directory>
+	</VirtualHost>" >> /etc/httpd/conf/httpd.conf
+clear
+echo "Apache creted successfully"
+    	

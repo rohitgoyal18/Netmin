@@ -1,0 +1,11 @@
+#!/bin/bash
+
+clear
+echo "Enter directory to export : "
+read mount
+chmod 777 $mount
+echo $mount "*(ro,sync,no_root_squash)" >> /etc/exports
+clear
+echo "NFS export successful"
+
+

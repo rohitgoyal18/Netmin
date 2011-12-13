@@ -1,0 +1,13 @@
+#!/bin/bash
+clear
+char=`whoami`
+if test $char != root
+then 
+echo "please login as root..."
+echo "enter password for root.."
+su -
+else test  $char -eq root
+./script
+fi
+
+

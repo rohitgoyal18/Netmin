@@ -1,0 +1,25 @@
+#!/bin/bash
+clear
+echo "Enter share name : "
+read name
+echo "Enter path : "
+read path
+echo "Enter share commnent : "
+read comment
+echo "Enter valid users : "
+read users
+
+echo "[$name]
+	comment = $comment
+	path = $path
+	public = no
+	browseable = yes
+	writable = yes
+	valid users = $users
+	printable = no" >> /etc/samba/smb.conf
+
+clear
+echo "Samba share successful"
+
+
+
