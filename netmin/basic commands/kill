@@ -1,0 +1,8 @@
+#!/bin/bash
+clear
+ps -aux
+
+
+echo Enter the service number you want to kill
+read kkk
+kill -9 $kkk

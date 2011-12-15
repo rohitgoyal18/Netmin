@@ -1,13 +1,177 @@
 #!/bin/bash
-user = 'whoami'
+
+maindirectorypath=`pwd`
+
+check()
+{
+user=`whoami`
 clear
-if [ $user!=root ]
-then 
-	tput cup 9 30
-	echo "You should have root privelege to run NETMIN"
-	tput cup 10 30
-	echo "Enter root PASSWORD"
-	tput cup 11 30
-	su - root -c "sh /netmin/rahul/menu"
-	exit
+if [ $user == root ]
+then
+cd $maindirectorypath
+mv netmin .netmin
+tput cup 10 30
+clear
+tput cup 10 30
+echo -e "\33[45m you are root. please continue..... \33[0m"
+read xyz
+menu;
 fi
+clear
+if [ $user != root ]
+then
+        clear
+        tput cup 9 30
+	echo -e "\33[45m You need to log in as root to run this script. \33[0m"
+        tput cup 10 30
+        echo -e "\33[45m Enter root password \33[0m"
+        tput cup 11 30
+        su root -c " $maindirectorypath/./netmin "      
+exit
+fi
+}
+
+initialize()
+{
+tempfolderlist;
+tempfilelist;
+maxcount;
+}
+tempfolderlist()
+{
+ls -l | grep ^d | awk '{print $9}' | cat > .tempfolder
+numberoffolders=`wc -l .tempfolder | awk '{print $1F}'`
+}
+tempfilelist()
+{
+ls -p | grep -v / | cat > .tempfile
+numberoffiles=`wc -l .tempfile | awk '{print $1F}'`
+}
+maxcount()
+{
+max=`expr $numberoffolders + $numberoffiles`
+}
+
+back()
+{
+checkpath=`pwd`
+if [ $checkpath == $maindirectorypath ]
+then
+j=`expr $row + 4`
+tput cup $j 20
+echo -e "\33[31m This is the main menu, cannt go back. \33[0m"
+echo -e "\33[31m Choose an option or press Q to quit. \33[0m"
+echo -e "\33[31m Press enter to continue............. \33[0m"
+read xyz
+menu;
+fi
+cd ..
+initialize;
+menu;
+}
+enterdirectory()
+{
+foldername=`sed -n "$option"p .tempfolder`
+cd $foldername
+initialize;
+menu;
+}
+execute()
+{
+temp=`expr $option - $numberoffolders`
+executefile=`sed -n "$temp"p .tempfile`
+./$executefile
+read xyz
+initialize;
+menu;
+}
+menu()
+{
+clear
+initialize;
+echo 
+tput cup 3 20
+echo -e "\33[33m ***************************** \33[0m"
+tput cup 4 20
+echo -e "\33[34m |       Netmin Project       | \33[0m"
+tput cup 5 20
+echo -e "\33[33m ***************************** \33[0m"
+row=6
+column=20
+i=1
+    while read foldername
+     do
+         tput cup $row $column
+         echo -e  "\33[31m  '|$i    $foldername'\33[0m "
+         row=`expr $row + 1`
+         i=`expr $i + 1`
+     done < .tempfolder
+    while read filename
+     do
+        tput cup $row $column
+        echo -e  "\33[36m  '|$i    $filename'\33[0m "
+        row=`expr $row + 1`
+        i=`expr $i + 1`
+     done < .tempfile
+
+row=`expr $row + 5`
+tput cup $row 40
+echo -e "\33[47m Press Q to quit, B to go back \33[0m"
+row=`expr $row + 2`
+tput cup $row 0
+echo -e "\33[47m Enter your option: \33[0m"
+input;
+}
+exception()
+{
+clear
+tput cup 5 30
+echo -e "\33[35m Wrong option \33[0m"
+echo -e "\33[35m Press ENTER to continue..... \33[0m"
+read xyz
+menu;
+}
+input()
+{
+tput cup $row 20
+read option
+
+if [ $option == q ]
+then
+cd $maindirectorypath
+mv .netmin netmin
+clear
+exit
+fi
+
+if [ $option == Q ]
+then
+cd $maindirectorypath
+mv .netmin netmin
+clear
+exit
+fi
+
+if [ $option == b ]
+then
+clear
+back;
+fi
+
+if [ $option -le $numberoffolders ]
+then
+clear
+enterdirectory;
+fi
+
+if [ $option -ge $numberoffolders ]
+then
+clear
+execute;
+else
+exception;
+fi
+
+}
+
+check;

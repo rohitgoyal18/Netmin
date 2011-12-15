@@ -1,0 +1,12 @@
+#!/bin/bash
+clear
+echo  " There are permission for [owner group other]"  
+echo  " For each there is read(4),write(2) and execute(1) permission"
+echo  "There can be maximum 7 permission for each"
+tput cup 15 15
+echo  "enter the permission in three digit you want to give as 777"
+read digit
+tput cup 17 15
+ echo  "enter the name of the file you want to change mode"
+read aloo
+chmod $digit $aloo

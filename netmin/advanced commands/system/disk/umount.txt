@@ -1,0 +1,9 @@
+#!/bin/bash
+
+clear
+echo "Enter directory to unmount : "
+read path
+umount $path
+clear
+echo "Unmount successful"
+

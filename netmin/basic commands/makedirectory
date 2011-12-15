@@ -1,0 +1,7 @@
+#!/bin/bash
+clear
+tput cup 5 15
+echo  "enter the of the file you want to create"
+read ram
+mkdir $ram
+

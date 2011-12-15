@@ -1,0 +1,8 @@
+#!/bin/bash
+clear
+tput cup 5 15
+echo -n it will show all file present in
+pwd
+echo along permission owner group size date 
+sleep 4
+ls -la

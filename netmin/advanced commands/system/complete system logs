@@ -1,0 +1,9 @@
+#!/bin/bash
+clear
+  tput cup 5 20
+echo -e "\33[42m System Message last 10 message....!  \33[0m"
+echo -e "\33[45m To Check Entire Log Message check:/var/log/messages \33[0m"
+tail -10 /var/log/messages
+tput cup 25 20
+
+       read ;;

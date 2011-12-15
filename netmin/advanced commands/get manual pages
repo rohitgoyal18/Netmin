@@ -1,0 +1,16 @@
+#/bin/bash     
+clear
+tput cup 2 20
+echo -e "\33[33m ************************** \33[0m"
+tput cup 3 20
+echo -e "\33[37m   Manual Page For Users: \33[0m"
+tput cup 4 20
+echo -e "\33[32m ************************** \33[0m"
+tput cup 6 0
+echo -e "\33[42mFor which command do you want to get man page: \33[0m"
+tput cup 6 46
+read cc
+man $cc
+tput cup 30 20
+disp1
+        read ;;

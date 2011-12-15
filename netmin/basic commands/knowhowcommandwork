@@ -1,0 +1,6 @@
+#!/bin/bash
+clear
+tput cup 5 15
+echo Enter the command whose function you want to know 
+read gg
+man $gg

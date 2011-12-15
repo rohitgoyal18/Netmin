@@ -1,0 +1,13 @@
+#!/bin/bash
+#code for NS Lookup 
+                    
+
+clear
+	tput cup 10 30
+	printf "Enter The Web Site Address : "
+	read name
+	tput cup 11 30;
+	echo $name | nslookup -sil | sed -n '5p'
+	tput cup 12 30;
+	echo " Press enter to return to the main menu. "
+	read ;;

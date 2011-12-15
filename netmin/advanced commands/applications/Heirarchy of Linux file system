@@ -1,0 +1,457 @@
+clear
+echo
+echo
+echo -e "			\033[36m\033[41mPOSIX ==> (IT IS A UNIQUE STANDARD)\033[0m"
+echo -e "		   \033[36m\033[41mLINUX FILESYSTEM HIERARCHY STANDARD [FHS.ORG]\033[0m"
+read -p ""
+echo -e "					/"
+read
+echo -e "        ------------------------------------------------------------------"
+tput cup 7 8
+echo -e "\033[31m+\033[0m"
+tput cup 7 13
+echo -e "\033[31m+\033[0m"
+tput cup 7 18
+echo -e "\033[31m+\033[0m"
+tput cup 7 23
+echo -e "\033[31m+\033[0m"
+tput cup 7 28
+echo -e "\033[31m+\033[0m"
+tput cup 7 33
+echo -e "\033[31m+\033[0m"
+tput cup 7 38
+echo -e "\033[31m+\033[0m"
+tput cup 7 43
+echo -e "\033[31m+\033[0m"
+tput cup 7 48
+echo -e "\033[31m+\033[0m"
+tput cup 7 53
+echo -e "\033[31m+\033[0m"
+tput cup 7 58
+echo -e "\033[31m+\033[0m"
+tput cup 7 63
+echo -e "\033[31m+\033[0m"
+tput cup 7 68
+echo -e "\033[31m+\033[0m"
+tput cup 7 73
+echo -e "\033[31m+\033[0m"
+
+
+tput cup 8 8
+echo -e "\033[31m|\033[0m"
+tput cup 8 13
+echo -e "\033[31m|\033[0m"
+tput cup 8 18
+echo -e "\033[31m|\033[0m"
+tput cup 8 23
+echo -e "\033[31m|\033[0m"
+tput cup 8 28
+echo -e "\033[31m|\033[0m"
+tput cup 8 33
+echo -e "\033[31m|\033[0m"
+tput cup 8 38
+echo -e "\033[31m|\033[0m"
+tput cup 8 43
+echo -e "\033[31m|\033[0m"
+tput cup 8 48
+echo -e "\033[31m|\033[0m"
+tput cup 8 53
+echo -e "\033[31m|\033[0m"
+tput cup 8 58
+echo -e "\033[31m|\033[0m"
+tput cup 8 63
+echo -e "\033[31m|\033[0m"
+tput cup 8 68
+echo -e "\033[31m|\033[0m"
+tput cup 8 73
+echo -e "\033[31m|\033[0m"
+
+tput cup 9 8
+echo -e "\033[31mv\033[0m"
+tput cup 9 13
+echo -e "\033[31mv\033[0m"
+tput cup 9 18
+echo -e "\033[31mv\033[0m"
+tput cup 9 23
+echo -e "\033[31mv\033[0m"
+tput cup 9 28
+echo -e "\033[31mv\033[0m"
+tput cup 9 33
+echo -e "\033[31mv\033[0m"
+tput cup 9 38
+echo -e "\033[31mv\033[0m"
+tput cup 9 43
+echo -e "\033[31mv\033[0m"
+tput cup 9 48
+echo -e "\033[31mv\033[0m"
+tput cup 9 53
+echo -e "\033[31mv\033[0m"
+tput cup 9 58
+echo -e "\033[31mv\033[0m"
+tput cup 9 63
+echo -e "\033[31mv\033[0m"
+tput cup 9 68
+echo -e "\033[31mv\033[0m"
+tput cup 9 73
+echo -e "\033[31mv\033[0m"
+
+tput cup 10 7
+echo -e "bin"
+tput cup 10 12
+echo -e "sbin"
+tput cup 10 17
+echo -e "usr"
+tput cup 10 22
+echo -e "boot"
+tput cup 10 27
+echo -e "home"
+tput cup 10 32
+echo -e "root"
+tput cup 10 37
+echo -e "var"
+tput cup 10 42
+echo -e "tmp"
+tput cup 10 47
+echo -e "lib"
+tput cup 10 52
+echo -e "dev"
+tput cup 10 57
+echo -e "opt"
+tput cup 10 62
+echo -e "mnt"
+tput cup 10 67
+echo -e "proc"
+tput cup 10 72
+echo -e "etc"
+
+read
+tput cup 11 18
+echo -e "\033[31m|\033[0m"
+tput cup 12 18
+echo -e "\033[31m|\033[0m"
+echo -e "        -------------------------------                     --------"
+tput cup 13 8
+echo -e "\033[31m+\033[0m"
+tput cup 13 13
+echo -e "\033[31m+\033[0m"
+tput cup 13 18
+echo -e "\033[31m+\033[0m"
+tput cup 13 23
+echo -e "\033[31m+\033[0m"
+tput cup 13 28
+echo -e "\033[31m+\033[0m"
+tput cup 13 33
+echo -e "\033[31m+\033[0m"
+tput cup 13 38
+echo -e "\033[31m+\033[0m"
+
+
+tput cup 14 8
+echo -e "\033[31m|\033[0m"
+tput cup 14 13
+echo -e "\033[31m|\033[0m"
+tput cup 14 18
+echo -e "\033[31m|\033[0m"
+tput cup 14 23
+echo -e "\033[31m|\033[0m"
+tput cup 14 28
+echo -e "\033[31m|\033[0m"
+tput cup 14 33
+echo -e "\033[31m|\033[0m"
+tput cup 14 38
+echo -e "\033[31m|\033[0m"
+
+tput cup 15 8
+echo -e "\033[31mv\033[0m"
+tput cup 15 13
+echo -e "\033[31mv\033[0m"
+tput cup 15 18
+echo -e "\033[31mv\033[0m"
+tput cup 15 23
+echo -e "\033[31mv\033[0m"
+tput cup 15 28
+echo -e "\033[31mv\033[0m"
+tput cup 15 33
+echo -e "\033[31mv\033[0m"
+tput cup 15 38
+echo -e "\033[31mv\033[0m"
+
+tput cup 16 7
+echo -e "bin"
+tput cup 16 12
+echo -e "sbin"
+tput cup 16 17
+echo -e "share"
+tput cup 16 23
+echo -e "lib"
+tput cup 16 27
+echo -e "src"
+tput cup 16 31
+echo -e "local"
+tput cup 16 37
+echo -e "include"
+
+tput cup 11 63
+echo -e "\033[31m|\033[0m"
+tput cup 12 63
+echo -e "\033[31m|\033[0m"
+tput cup 13 59
+echo -e "\033[31m+\033[0m"
+tput cup 13 67
+echo -e "\033[31m+\033[0m"
+
+tput cup 14 59
+echo -e "\033[31m|\033[0m"
+tput cup 14 67
+echo -e "\033[31m|\033[0m"
+tput cup 15 59
+echo -e "\033[31mv\033[0m"
+tput cup 15 67
+echo -e "\033[31mv\033[0m"
+
+tput cup 16 57
+echo -e "cdrom"
+tput cup 16 65
+echo -e "floppy"
+
+read
+
+
+tput cup 17 18
+echo -e "\033[31m|\033[0m"
+echo -e "	       -------"
+
+tput cup 18 14
+echo -e "\033[31m+\033[0m"
+tput cup 18 22
+echo -e "\033[31m+\033[0m"
+tput cup 19 14
+echo -e "\033[31m|\033[0m"
+tput cup 19 22
+echo -e "\033[31m|\033[0m"
+tput cup 20 14
+echo -e "\033[31mv\033[0m"
+tput cup 20 22
+echo -e "\033[31mv\033[0m"
+
+tput cup 21 13
+echo -e "doc"
+tput cup 21 21
+echo -e "man"
+
+echo
+echo
+echo -e "\033[5mPRESS ENTER TO CONTINUE\033[0m\c"
+read
+
+
+clear
+echo
+echo
+echo -e "		\033[36m\033[41mBRIEF VIEW OF ALL PARTITION & DIRECTORIES\033[0m"
+echo
+echo
+echo -e "		\033[31m\033[05mALL BINARY ARE CONTAINED IN FOUR DIRECTORIES\033[0m"
+read
+
+echo
+echo -e "		\033[32m/sbin\033[0m"
+echo
+echo
+echo
+echo
+echo -e "		\033[32m/usr/sbin\033[0m"
+echo
+echo
+echo
+echo
+echo -e "		\033[32m/bin\033[0m"
+echo
+echo
+echo
+echo
+echo -e "		\033[32m/usr/bin\033[0m"
+echo
+echo
+echo
+echo
+
+
+read
+tput cup 4 16 
+echo -e "--> contains binaries, used only by \033[36mroot\033[0m"
+
+tput cup 5 16
+echo -e "--> if this binaries are \033[36mnot installed\033[0m then linux will \033[36mnot start\033[0m"
+
+tput cup 6 16
+echo -e "--> EG: fdisk, lilo, fsck etc" 
+
+read
+tput cup 9 16 
+echo -e "--> contain binaries, used only by \033[36mroot\033[0m as an \033[36moptional\033[0m binary"
+tput cup 10 16 
+echo -e "--> if this binaries are \033[36mnot installed\033[0m, linux will \033[36mwork properly\033[0m"
+tput cup 11 16
+echo -e "--> EG: Sendmail, Apacche etc"
+read
+tput cup 14 16 
+echo -e "--> contain binaries, used by \033[36mroot+user\033[0m"
+tput cup 15 16 
+echo -e "--> if this binaries are \033[36mnot installed\033[0m, linux will \033[36mnot start\033[0m"
+tput cup 16 16
+echo -e "--> EG: mount, mknod, ln etc"
+read
+tput cup 19 16
+echo -e "--> contain binaries, used by \033[36mroot+user\033[0m as an \033[36moptional\033[0m binary"
+
+tput cup 20 16 
+echo -e "--> if this binaries are \033[36mnot installed\033[0m, linux will \033[36mwork properly\033[0m"
+
+tput cup 21 16 
+echo -e "--> EG:bc, bzip2, cal etc"
+echo
+echo
+echo -e "  \033[05mPRESS ENTER TO CONTINUE\033[0m\c"
+read
+
+
+clear
+echo
+echo
+echo -e "               \033[32m/usr\033[0m\c"
+read
+echo -e "		--> all program are stored after installation in this directory"
+echo -e "		--> it contain sub directory such as :\c"
+read
+echo -e "		--> 	\033[35m/share\033[0m"
+echo -e "			\033[36m@\033[0m contain \033[36mdocumentation\033[0m binaries of  for \033[36mlearing\033[0m"
+echo -e "			\033[36m@\033[0m contain \033[36mmanual\033[0m of binaries for \033[36mremembering\033[0m"
+echo -e "			\033[36m@\033[0m manual directory contain \033[36m9 manual\033[0m i.e man1.....man9 "
+
+read
+echo -e "                -->     \033[35m/lib\033[0m"
+echo -e "                        \033[36m@\033[0m contain \033[36m.so files\033[0m"
+echo -e "                        \033[36m@\033[0m .so\033[36m(shared object)\033[0m is nothing but library file"
+read
+echo -e "                -->     \033[35m/src\033[0m"
+echo -e "                        \033[36m@\033[0m contain \033[36msource files\033[0m"
+echo -e "                        \033[36m@\033[0m source file  are nothing but the \033[36mc code prog\033[0m" 
+echo -e "			  of all binaries"
+
+read
+echo -e "                -->     \033[35m/include\033[0m"
+echo -e "                        \033[36m@\033[0m contain \033[36m.h files\033[0m"
+
+read
+echo -e "                -->     \033[35m/boot\033[0m"
+echo -e "                        \033[36m@\033[0m contain \033[36ma booting file\033[0m such as boot.b, map etc"
+echo -e "                        \033[36m@\033[0m it also contain kernel file \033[36mvmlinuz\033[0m"
+echo -e "                        \033[36m@\033[0m vmlinuz 2.4.20-8 is a single compressed file" 
+echo -e "  		          \033[36mcontain 9777 files\033[0m"
+echo
+echo -e "  \033[05mPRESS ENTER TO CONTINUE\033[0m\c"
+read
+
+clear
+echo
+echo
+echo -e "               \033[32m/home\033[0m\c"
+read
+echo -e "               --> contains all \033[36muser home directory\033[0m"
+echo -e "	       --> once \033[36muser\033[0m is created it is \033[36massigned home directory\033[0m"
+echo -e "	           of \033[36mits name by default\033[0m in this directory"
+echo
+echo
+echo -e "               \033[32m/root\033[0m\c"
+read
+echo -e "               --> when \033[36mroot login\033[0m, it is \033[36massign this directory\033[0m"
+echo
+echo
+echo -e "               \033[32m/var\033[0m\c"
+read
+echo -e "               --> contain all \033[36mlog file\033[0m"
+echo -e "               --> all \033[36mmail of user\033[0m are stored in \033[36m/var/spool/mail/\033[0m"
+echo
+echo -e "               \033[32m/tmp\033[0m\c"
+read
+echo -e "               --> contain all \033[36mtemporary file\033[0m"
+echo -e "               --> samba,apache etc create \033[36mmany temporary file\033[0m"
+echo -e "                   for their calculations are stored in this directory"
+
+echo
+echo
+echo -e "               \033[32m/lib\033[0m\c"
+read
+echo -e "               --> contain all \033[36mshared object file (.so)\033[0m"
+echo -e "               --> .so file is same as \033[36mdll file or library file\033[0m"
+echo
+
+echo -e "  \033[05mPRESS ENTER TO CONTINUE\033[0m\c"
+read
+
+clear
+echo
+echo
+echo -e "               \033[32m/dev\033[0m\c"
+read
+echo -e "               --> contain all \033[36mdevice driver file\033[0m"
+echo -e "	       --> device driver file are of two type :"
+read
+echo -e "	       --> 	\033[35mBlock special\033[0m"
+echo -e "		   	\033[36m@\033[0m block special device are: printer scanner etc."
+echo -e "                   	\033[36m@\033[0m each \033[36mdevice driver\033[0m has two no. \033[36mmajor & minor no\033[0m"
+echo -e "                   	\033[36m@\033[0m using this two no., device driver can be"
+echo -e "                    	 created by \033[36mbinary 'mknod'\033[0m"
+read
+echo -e "               -->      \033[35mCharacter special\033[0m"
+echo -e "                       \033[36m@\033[0m Character special device are: mouse keyboard etc."
+echo -e "                       \033[36m@\033[0m each \033[36mdevice driver\033[0m has two no. \033[36mmajor & minor no\033[0m"
+echo -e "                       \033[36m@\033[0m using this two no., device driver can be"
+echo -e "                        created by \033[36mbinary 'mknod'\033[0m"
+
+read -p ""
+echo -e "	       --> all directory is a file"
+echo -e "               --> directory contain device driver"
+echo -e "               --> also device driver is a file"
+echo -e "               --> therefore hardware is a directory or file"
+
+echo
+echo
+echo -e "  \033[05mPRESS ENTER TO CONTINUE\033[0m\c"
+read
+
+clear
+echo
+echo
+echo -e "               \033[32m/mnt\033[0m\c"
+read
+echo -e "               --> contain \033[36mmount point directory\033[0m"
+echo -e "               --> mount point directory of floppy, cdrom, cdrw etc"
+echo
+echo
+
+echo -e "               \033[32m/etc\033[0m\c"
+read
+echo -e "               --> contain \033[36configuration file\033[0m"
+echo -e "               --> all configuration file is of type \033[36mtext\033[0m"
+echo -e "	       --> it contain config file of hosts, networking, samba etc"
+read
+echo
+echo -e "		\033[36mQUE:\033[0m\033[31mLinux Filesystem Hierarchy made unique standard POSIX\033[0m"
+read
+echo -e "		\033[36mbecoz:\033[0m\033[33mIf this standard or organisation is not created then"
+echo -e "		all file are stored in single directory; as samba,apache etc"
+echo -e "		create bulk of temp file, program installed in same directory"
+echo -e "		and if this directory is full then next time root will not"
+echo -e "		allowed to login.\033[0m"
+
+echo -e "		\033[37mSo this org created a unique standard \033[34mPOSIX\033[0m \033[37mso that even if"
+echo -e "		all this created directories is full then also root can login \033[0m"
+
+echo -e "		\033[32mIf root directory is full then root cant login so some care"
+echo -e "		should be taken so that root directory should not be full\033[0m"
+echo
+echo -e "  \033[05mPRESS ENTER TO EXIT\033[0m\c"
+read
+

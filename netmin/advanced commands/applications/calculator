@@ -1,0 +1,54 @@
+#!/bin/bash
+clear
+echo -n "This is a Calculator.              Press q to quit, c to clear.";
+initiate()
+{
+echo ""
+echo -n "Enter the first number:"
+read i
+echo -n "Enter the operator:"
+read op
+operation;
+}
+operation()
+{
+if [ $op == q ]
+then
+echo -n "Press any key to continue."
+exit;
+fi
+if [ $op == c ]
+then
+clear
+initiate;
+fi
+echo -n "Enter the second number:"
+read j
+
+case $op  in
++)
+	i=`expr $i + $j`
+                ;;
+-)	
+	i=`expr $i - $j`
+		;;
+/)
+	i=`expr $i / $j`
+	;;
+\*)	i=`expr $i \* $j`
+	;;
+
+*)      exit 
+        ;;
+esac
+echo -n "The result is:"
+echo "$i"
+conti;
+}
+conti()
+{
+echo -n "Enter operator."
+read op
+operation;
+}
+initiate;

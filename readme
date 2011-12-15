@@ -18,4 +18,36 @@ Important notes :
 
  
  
-This is the Starting of this project. This file will be modified accordingly.
+ 
+
+This utility has been re-written from scratch and has been re-developed by 
+Rohit Goyal. Special thanks to "Rahul Dhal" for his help and support in the development.
+
+also, it would have never been possible for me to make it possible without SWAPAN SIR, who has been the motivation behind the whole project.
+
+This version (version 9) has taken care of all the previous versions of "Netmin" that were available till date. it integrates all the previous contributed working scripts. Credits for the scripts included in this project are given in the respective scripts.
+
+
+ABOUT THIS PROJECT.
+
+This utility is meant to provide an easy way to configure a given linux server, directly using the shell. since it is running at the shell, it works faster and is more secure. 
+
+
+
+Important Points to keep in mind while runnig this project.
+
+1) First browse to the directory where you have placed the netmin folder. only then run the file "netmin" using command
+./netmin
+
+2) To include your own script into the project, just prepare a working script and put it inside the netmin directory/subdirectory according to its relevance. it will automatically feature in the menu, the next time you run the script. do not forget to change the file permissions to executable when you are placing them in the Netmin folder. It is advised that you run your script independently on your system to test it, before you add it into the netmin project for best working of the netmin.
+
+3) Do not use the exit 2 function in your custom programs. if you will, your program will terminate but it will also make the "netmin" file hidden. you can replace the main "netmin" file back by using given command, after entering into the netmin directory. 
+"mv .netmin netmin"
+
+4) Please use it as a platform to furthur enhance the functionality of this project. but please don't take away any credits from the people who have worked and added their invaluable support to this project. 
+
+For any help, bugs or queries in this version,  mail me at   rohitgoyal18@gmail.com   
+
+
+ 
+Modify this ReadMe file in future, if you make any new changes to the Netmin that needs consideration.

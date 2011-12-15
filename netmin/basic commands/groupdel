@@ -1,0 +1,12 @@
+#!/bin/bash
+clear
+tput cup 6 15
+echo [The group will not delete if it is primary group of any user
+tput cup 7 15
+echo you have to change primary group of that user for that first 
+tput cup 8 15
+echo run usermod] 
+tput cup 10 15
+echo otherwise enter the name of group you want to delete 
+read gg
+groupdel $gg

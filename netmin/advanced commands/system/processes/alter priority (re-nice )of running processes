@@ -1,0 +1,14 @@
+#!/bin/bash
+clear
+tput cup 5 20
+echo -e "\33[42m Enter the Process Name:\33[0m"
+tput cup 5 44
+read pi
+tput cup 8 20
+#echo -e "\33[43m Process id of given process Name: \33[0m"
+pidof $pi
+renice -15 `pidof $pi`
+sleep 5
+clear
+        tput cup 30 20
+        read ;;

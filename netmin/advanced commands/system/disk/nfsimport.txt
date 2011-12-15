@@ -1,0 +1,13 @@
+#!/bin/bash
+clear
+
+echo "Enter NFS server ip address : "
+read ip
+echo "Enter source directory : "
+read src
+echo "Enter local directory to mount to : "
+read local
+mount -t nfs $ip:$src $local
+clear
+echo "NFS import successful"
+

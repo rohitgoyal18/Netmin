@@ -1,0 +1,7 @@
+#!/bin/bash
+clear
+      echo "you are $LOGNAME "
+tput cup 5 15
+     echo "Enter the name of group you want to add if you are root"
+     read gname
+     groupadd $gname

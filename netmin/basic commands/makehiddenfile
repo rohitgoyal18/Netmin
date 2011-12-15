@@ -1,0 +1,9 @@
+#!/bin/bash
+clear
+tput cup 5 15
+echo Enter the name of file you want to create and hide
+read rr
+tput cup 8 15
+echo -n start writting what you want to hide and cntr+c for finishing it if you do it again 
+echo  " for the  same file name it will over written to see hidden files run allpresentfile "
+cat > .$rr

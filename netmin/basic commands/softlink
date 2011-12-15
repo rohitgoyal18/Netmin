@@ -1,0 +1,11 @@
+#!/bin/bash
+clear
+tput cup 5 15
+echo Enter the name of in which you want to provide the link
+read soft
+clear
+tput cup 5 15
+echo Enter the name of file or folder which link you want to provide
+read name
+ln -s $name $soft
+

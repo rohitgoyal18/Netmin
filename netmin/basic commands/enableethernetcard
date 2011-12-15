@@ -1,0 +1,3 @@
+#!/bin/bash
+clear
+ifup eth0

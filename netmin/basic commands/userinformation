@@ -1,0 +1,8 @@
+#!/bin/bash
+clear
+  tput cup 5 15
+  echo "Enter the name of user whom info you want "
+  read rah
+  clear
+  chage -l $rah
+

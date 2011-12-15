@@ -1,0 +1,9 @@
+clear
+   echo -n "hidden folder will create in "
+   pwd
+   tput cup 5 5
+   echo -n "Enter the name of hidden folder u want to create in "
+   pwd
+   read pp
+   mkdir .$pp
+

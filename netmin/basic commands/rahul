@@ -1,0 +1,210 @@
+#!/bin/bash
+    clear
+tput cup 5 15
+echo "you are $LOGNAME "
+tput cup 12 20 
+echo -n "some command will not run if u r not root"
+sleep 0
+clear
+tput cup 3 15
+echo -n "Enter the code number of command you want to run  "
+tput cup 4 15
+echo -n "and to terminate anywhere press ctrl+c. "
+tput cup 7 5
+echo  "1.useradd:"
+tput cup 8 5
+echo "2.userdel "
+tput cup 9 5
+echo "3.groupadd:"
+tput cup 10 5
+echo "4.changemode:"
+tput cup 11 5
+echo "5.make directry:"
+tput cup 12 5
+echo "6.make file"
+tput cup 13 5
+echo "7.remove file and folder"
+tput cup 14 5
+echo "8.change file name"
+tput cup 15 5 
+echo "9.change ip of machine"
+tput cup 16 5
+echo "10.enable network card"
+tput cup 17 5
+echo "11.disable network card"
+tput cup 18 5
+echo "12.set date "
+tput cup 19 5
+echo "13.To kill any service"
+tput cup 20 5
+echo "14.To make a hidden folder" 
+tput cup 21 5
+echo "15.To see hidden folder "
+tput cup 22 5
+echo "16.To see details of any user(date when it add n more)"
+tput cup 23 5
+echo "17.To add any exist user into any exist group"
+tput cup 24 5
+echo 18.T0 see wheather it is file or folder 
+read cono   
+case $cono in
+1)
+clear
+echo "you are $LOGNAME "
+tput cup 3 5
+echo "enter the name of user you want to add if ur root"
+read name
+useradd $name
+passwd $name
+;;
+2)
+clear
+echo "you are $LOGNAME "
+echo "Enter the name of user u want to delete if ur root" 
+read del
+userdel -r $del
+;;
+3)
+clear
+ echo "you are $LOGNAME "
+echo "Enter the name of group you want to add if you are root"
+read gname
+groupadd $gname
+;;
+4)
+clear
+ echo "you are $LOGNAME "
+echo -n "enter the permission in three digit you want to give"
+read digit
+echo -n "enter the name of the file you want to change mode"
+read aloo
+chmod $digit $aloo
+;;
+5)
+clear
+ echo "you are $LOGNAME "
+echo  "enter the of the file you want to create"
+read ram
+mkdir $ram
+;;
+6)
+clear
+ echo "you are $LOGNAME "
+echo "enter the name of file you want to create"
+read create
+cat > $create
+;;
+7)
+clear
+ echo "you are $LOGNAME "
+echo "Enter the name of file or folder you want to delete"
+read rrr
+rm -rf $rrr
+;;
+8)clear
+ echo "you are $LOGNAME "
+tput cup 3 5
+echo "you have these files and folder"
+tput cup 5 5
+ls -l
+echo -n "Enter the name of file you want to change  "
+read rr
+clear
+tput cup 15 15
+echo " Enter the new name of file you want to give"
+read mm
+mv $rr $mm
+;;
+9)
+clear
+ echo "you are $LOGNAME "
+echo "give ip n subnet mask n (gateway ip and  primary should  be blank)"
+sleep 5
+netconfig
+service network restart
+;;
+10)
+clear
+ifdown eth0
+;;
+11)
+clear
+ifup eth0
+;;
+12)
+clear
+echo "you are $LOGNAME "
+echo " Enter the date in formate of ddmmhhmmyyyy"
+read date
+date $date
+echo "Enter the file or folder name which you want to change date "
+read ne
+touch $ne
+echo "Enter the  current date in formate of ddmmhhmmyyyy"
+read ra
+date $ra
+;;
+13)
+ps -aux
+echo "Enter the service number you want to kill"
+read kkk
+kill -9 $kkk
+;;
+14)
+clear
+echo " you are $LOGNAME "
+echo -n "hidden folder will create in "
+pwd
+tput cup 5 5
+echo -n "Enter the name of hidden folder u want to create in " 
+pwd
+read pp
+mkdir .$pp
+;;
+15)
+clear
+echo you are $LOGNAME
+tput cup 15 15
+echo -n "you can see all file n folder in "
+pwd 
+sleep 3
+clear
+ls -al
+;;
+16)
+clear
+echo you are $LOGNAME
+tput cup 15 15
+echo "Enter the name of user whom info you want "
+read rah
+clear
+chage -l $rah
+;;
+17)
+clear
+echo you are $LOGNAME
+tput cup 15 15
+echo Enter the name of user
+read uname
+clear 
+tput cup 15 15
+echo Enter the name of group 
+read gp
+usermod -G $gp $uname
+clear
+echo if you want to check it then wait for 5 sec otherwise press ctrl+c
+sleep 5
+cat /etc/group
+;;
+18)
+clear
+echo you are $LOGNAME
+tput cup 15 15
+echo Enter the name of file or folder to whom you want to know
+read dhal
+file $dhal
+
+;;
+*)
+echo "Thank you !!!"
+esac 

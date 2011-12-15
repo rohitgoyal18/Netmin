@@ -1,0 +1,34 @@
+#/bin/bash
+clear
+#Program to display and enable/disable the network services.
+dispxinetd()
+{
+echo ""
+echo "Service        Disabled?"
+touch .dis .names
+ls -1 /etc/xinetd.d|cat > .names
+count=`wc -l names|cut -d ' ' -f 1`
+for (( n=1; n<=$count; n++ ))
+do
+	name=`sed -n "$n p" .names`
+	grep 'disable' /etc/xinetd.d/$name|cut -d '=' -f 2|cat >> .dis
+done
+paste -d "\t\t\t\t" .names .dis|more
+rm .dis
+rm .names
+}
+dispxinetd | more;
+echo "Enter the service name(exactly matching the names above) to be enabled/disabled"
+read name
+clear
+touch /tempo 
+a=`cat /etc/xinetd.d/$name|grep 'disable'|cut -d '=' -f 2`
+if [ $a = 'no' ]
+then 
+sed '/disable/s/no/yes/' /etc/xinetd.d/$name|sed -n '1,$w /tempo' 
+else 
+sed '/disable/s/yes/no/' /etc/xinetd.d/$name|sed -n '1,$w /tempo'
+fi
+mv /tempo /etc/xinetd.d/$name
+clear
+dispxinetd | more;

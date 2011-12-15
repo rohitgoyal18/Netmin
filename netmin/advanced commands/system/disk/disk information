@@ -1,0 +1,8 @@
+#!/bin/bash
+clear
+        
+tput cup 12 20 
+echo -e "\33[32m Disk Information of Your System \33[0m"
+df -h
+
+        read ;;

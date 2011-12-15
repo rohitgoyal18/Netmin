@@ -1,0 +1,10 @@
+#!/bin/bash
+#Program to show complete hardware of the system.
+clear 
+      tput cup 5 20  
+echo -e "\33[42mInfo on Hardware Attached During the system Bootup \33[0m"
+     cat /etc/sysconfig/hwconf |more
+ tput cup 30 30
+echo -e "\33[43m  Press Enter to Return to main Menu \33[0m"
+tput cup 27 67 
+        read;;

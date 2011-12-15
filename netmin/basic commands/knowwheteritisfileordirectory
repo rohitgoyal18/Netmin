@@ -1,0 +1,9 @@
+#!/bin/bash
+clear
+   tput cup 15 15
+   echo Enter the name of file or folder to whom you want to know whether it is file or  directory if  ASCII text means file 
+sleep 2
+ls -l   
+read dhal
+   file $dhal
+

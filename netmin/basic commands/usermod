@@ -1,0 +1,9 @@
+#!/bin/bash
+clear
+tput cup 5 15
+echo Enter the name of user whose primary  group you want to change
+read user
+tput cup 7 15
+echo Enter the name of group which is already present in the system 
+read group
+usermod -g $group $user

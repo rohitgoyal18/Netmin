@@ -1,0 +1,6 @@
+#!/bin/bash
+clear
+tput cup 5 15
+echo    Enter the date for system to operate in MMDDHHMMYYYY month date hours minutes year
+read date
+date $date

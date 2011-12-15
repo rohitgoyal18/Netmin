@@ -1,0 +1,9 @@
+#!/bin/bash
+clear
+tput cup 10 20
+echo -e "\33[42m  Partition On Your System  \33[0m"
+ fdisk -l
+echo -e "\33[47m  * Indicates Your Primary Partition...! \33[0m"
+        tput cup 30 20
+
+        read ;;

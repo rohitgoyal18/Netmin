@@ -1,0 +1,14 @@
+#/bin/bash
+clear
+echo -e "\33[35m Note:Your Tar file will create directory structure as your path..!\33[0m"
+tput cup 8 0
+echo -e "\33[31m Enter the Path of a file/directory for backup: \33[0m"
+tput cup 8 47
+       read p
+tput cup 9 0
+echo -e "\33[42m Enter The Name  of  a  backup  tar file to be: \33[0m"
+tput cup 9 47
+read bp
+tar -zcvf $bp.tgz  $p
+
+read

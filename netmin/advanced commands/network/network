@@ -1,0 +1,112 @@
+#!/bin/bash
+clear
+disp1()
+{
+tput cup 8 20
+echo '|  1. Configure Ip-Address                        |'
+tput cup 9 20
+echo '|  2. Get My Ip-Address                           |'
+tput cup 10 20
+echo '|  3. Check Ip-Forwarding Enabled or not          |'
+tput cup 11 20
+echo '|  4. Enable Ip_Forwarding                        |'
+tput cup 12 20
+echo '|  5. Disable Ip_Forwarding                       |'
+tput cup 13 20
+echo '|  Q. Quit                                        |'
+tput cup 14 20
+echo -e "\33[45m|  Enter your choice:                            |\33[0m"
+}
+disp1
+read choice
+
+case $choice in
+1)      clear
+        neat-tui
+        service network restart
+        disp1 
+        read;;
+
+2)      clear
+        ifconfig |more
+        disp1
+        read;;
+
+3)      clear
+tput cup 2 0
+echo -e "\33[42m net.ipv4.ip_forward = 0 thn Ip-Forwarding Disabled if=1 then Enabled\33[0m"
+        cat /etc/sysctl.conf |more
+        disp1
+        read;;
+4)      clear
+tput cup 10 20
+echo -e "\33[42m Ip_forward is enabled...!\33[0m"
+frwdingenable;
+tput cup 30 20
+       disp1 
+       read;;
+
+5)    clear
+  
+tput cup 10 20
+echo -e "\33[42m  Disable Ip_Forwarding.. \33[0m"
+frwdingdisable;
+tput cup 30 20
+        disp1
+        read ;;
+*)
+echo -e "\33[35m  IMPROPER CHOICE \33[0m"
+echo -e "\33[41m  Press Enter to Continue...! \33[0m"
+        read id
+esac
+
+frwdingenable()
+{
+echo "
+# Kernel sysctl configuration file for Red Hat Linux
+#
+# For binary values, 0 is disabled, 1 is enabled.  See sysctl(8) and
+# sysctl.conf(5) for more details.
+
+# Controls IP packet forwarding
+net.ipv4.ip_forward = 1
+
+# Controls source route verification
+net.ipv4.conf.default.rp_filter = 1
+
+# Do not accept source routing
+net.ipv4.conf.default.accept_source_route = 0
+
+# Controls the System Request debugging functionality of the kernel
+kernel.sysrq = 0
+
+# Controls whether core dumps will append the PID to the core filename.
+# Useful for debugging multi-threaded applications.
+kernel.core_uses_pid = 1" > /etc/sysctl.conf
+}
+
+frwdingdisable()
+{
+echo "
+# Kernel sysctl configuration file for Red Hat Linux
+#
+# For binary values, 0 is disabled, 1 is enabled.  See sysctl(8) and
+# sysctl.conf(5) for more details.
+
+# Controls IP packet forwarding
+net.ipv4.ip_forward = 0
+
+# Controls source route verification
+net.ipv4.conf.default.rp_filter = 1
+
+# Do not accept source routing
+net.ipv4.conf.default.accept_source_route = 0
+
+# Controls the System Request debugging functionality of the kernel
+kernel.sysrq = 0
+
+# Controls whether core dumps will append the PID to the core filename.
+# Useful for debugging multi-threaded applications.
+kernel.core_uses_pid = 1" > /etc/sysctl.conf
+
+}

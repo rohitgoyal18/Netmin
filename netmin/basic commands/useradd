@@ -1,0 +1,8 @@
+ #!/bin/bash
+clear
+ tput cup 5 15
+ echo "you are $LOGNAME "
+ echo "enter the name of user you want to add if ur root"
+      read name
+      useradd $name
+     passwd $name

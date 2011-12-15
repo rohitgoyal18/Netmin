@@ -1,0 +1,6 @@
+#!/bin/bash
+clear
+tput cup 10 20
+echo -e "\33[41m Total Number Of Users Logged In: \33[0m"
+       tput cup 30 20
+read

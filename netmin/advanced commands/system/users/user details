@@ -1,0 +1,13 @@
+#!/bin/bash
+#code for user details.
+                            
+echo "The Users and there details in the system are:"
+echo "______________________________________________"
+
+
+
+echo "User  UserName  Userid  Groupid  Shell  HomeDirectory  maxTimeExpire  SecondaryGroups"
+echo "----  --------  ------  -------  -----  -------------  -------------  ---------------"
+awk -F: '{print $1,$3,$4,$5}' /etc/passwd
+
+

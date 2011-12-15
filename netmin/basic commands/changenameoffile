@@ -1,0 +1,11 @@
+#!/bin/bash
+clear
+tput cup 5 15
+echo  "Enter the name of file you want to change  "
+ read rr
+ clear
+ tput cup 5 15
+ echo " Enter the new name of file you want to give"
+ read mm
+    116 mv $rr $mm
+

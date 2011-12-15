@@ -1,0 +1,25 @@
+#!/bin/bash
+#code for configuring network interface
+                          
+echo "enter name of the device(eg. eth0:1)"
+read name
+echo enter IP address of the device
+read add
+echo enter the broadcast address
+read bcadd
+echo enter the network address
+read nwadd
+echo "activate device on boot(yes or no)"
+read ans
+echo enter the netmask
+read netmask
+echo "MTU=\"\"
+NETMASK=$netmask
+BOOTPROTO=none
+ONPARENT=yes
+BROADCAST=$bcadd
+IPADDR=$add
+NETWORK=$nwadd
+ONBOOT=$ans
+DEVICE=$name"| cat >> /etc/sysconfig/network-scripts/ifcfg-$name;
+service network restart;

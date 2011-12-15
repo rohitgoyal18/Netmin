@@ -1,0 +1,7 @@
+#!/bin/bash
+clear
+tput cup 5 15
+    echo "Enter the name of user u want to delete if ur root"
+    read del
+     userdel -r $del
+

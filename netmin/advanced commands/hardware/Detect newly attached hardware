@@ -1,0 +1,12 @@
+#!/bin/bash
+#Program to detect newly attached Hardware.
+clear  
+    tput cup 5 20
+echo -e "\33[42mRunning Kudzu To Detect My Newly Attached Hardware \33[0m"
+tput cup 6 10
+echo -e "\33[47mKudzu will Prompt you to configure if any new Hardware is found else simply exit\33[0m"
+kudzu
+tput cup 30 30
+echo -e "\33[43m  Press Enter to Return to main Menu \33[0m"
+tput cup 27 67 
+       read;;

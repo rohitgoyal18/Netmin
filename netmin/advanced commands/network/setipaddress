@@ -1,0 +1,10 @@
+#!/bin/bash
+clear
+tput cup 10 10 ; echo -n "Enter ipaddress :"
+read ip
+tput cup 11 10; echo -n "Enter netmask:"
+read mask
+tput cup 12 10
+echo -n "Enter Ethernet name: "
+read eth
+ifconfig $eth $ip netmask $mask 

@@ -1,0 +1,12 @@
+#!/bin/bash
+clear
+#Program for checking total memory capacity.
+tput cup 5 20
+echo -e "\33[45mDisplays Capacity Of Your Main Memory & Secondary Memory:In MBs \33[0m"
+free -m  
+tput cup 10 20
+echo -e "\33[43m To Check In KB or GB Use command: free -k or -g\33[0m"
+tput cup 30 30
+echo -e "\33[43m  Press Enter to Return to main Menu \33[0m"
+tput cup 27 67 
+        read;;

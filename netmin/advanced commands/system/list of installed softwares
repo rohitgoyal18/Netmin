@@ -1,0 +1,86 @@
+#!/bin/bash
+clear
+while [ 1 ]
+do
+clear
+
+tput cup 9 20
+echo '|  1. Query for all Packages installed           |'
+tput cup 10 20
+echo '|  2. Query for specific packages                |'
+tput cup 11 20
+echo '|  3. Install packages                           |'
+tput cup 12 20
+echo '|  4. Userdefined manuall command interface      |'
+tput cup 13 20
+echo '|  Q. Quit                                       |'
+tput cup 14 20
+echo -e "\33[45m  Enter your choice:         \33[0m"
+tput cup 15 20
+echo '--------------------------------------------------'
+tput cup 14 40
+read  choice
+case $choice in
+
+1)      clear
+	rpm -qa|more
+        tput cup 30 30
+echo -e "\33[43m  Press Enter to Return to main Menu \33[0m"
+        read;;
+
+2)      clear
+	tput cup 10 20
+echo -e "\33[43m  Enter the Package name:\33[0m"
+	 tput cup 10 45
+	read pack
+	clear
+	 tput cup 10 20
+	rpm -iq $pack
+        tput cup 30 30
+echo -e "\33[43m  Press Enter to Return to main Menu \33[0m"
+        read;;
+
+3)      clear
+	tput cup 10 20
+	echo "Enter the full Path or http or ftp address for the package to install:"
+	tput cup 11 20
+	echo "For local files enter "/home/apple/example.rpm" as path name"
+	tput cup 12 20
+	echo "For ftp files enter "ftp://rpmfind/example.rpm" as path name"
+	tput cup 13 20
+	echo "For http files enter "http://rpmfind/example.rpm" as path name"
+	tput cup 14 42
+	read -p "Enter Path : " path
+	tput cup 16 20
+	rpm -ivh $path
+        tput cup 30 30
+        echo -e "\33[43m  Press Enter to Return to main Menu \33[0m"
+        read;;
+
+
+4)      clear 
+	tput cup 10 20
+	echo "Enter the rpm command argument to execute"
+	tput cup 11 20
+	read -p "rpm " argument
+	tput cup 12 20
+	rpm $argument
+        tput cup 30 30
+echo -e "\33[43m  Press Enter to Return to main Menu \33[0m"
+        read;;
+Q)
+
+        clear
+                exit;;
+
+q)
+        clear
+                exit;;
+
+*)    tput cup 30 30
+echo -e "\33[35m  IMPROPER CHOICE \33[0m"
+        tput cup 31 30
+echo -e "\33[41m  Press Enter to Continue...! \33[0m"
+        read id
+esac
+done

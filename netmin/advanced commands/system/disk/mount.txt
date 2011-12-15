@@ -1,0 +1,13 @@
+#!/bin/bash
+clear
+echo "Enter filesystem to mount(for ex- \"/dev/hda1\") : "
+read part
+echo "Enter directory where to mount : "
+read dir
+echo "Enter filesystem type : "
+read fs
+mount -t $fs $part $dir -f
+
+echo "Mount successful"
+
+

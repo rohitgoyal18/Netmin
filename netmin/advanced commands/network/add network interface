@@ -1,0 +1,17 @@
+#!/bin/bash
+clear
+#Program to add new virtual network interface.
+echo -n "Enter the name of the new virtual interface [ Sample format eth0:1,2,etc ]Please follow the given format ]"
+read name 
+ifconfig | grep $name >> /dev/null
+if [ $? -eq 0 ]
+then 
+echo -n "Interface already exists"
+exit 
+fi
+echo -n "Enter the ip address of this interface"
+read ip
+echo -n "Enter the subnet mask of this interface"
+read sub
+ifconfig $name $ip netmask $sub up
+echo -n "Interface added"

@@ -1,0 +1,35 @@
+#!/bin/bash
+#code to add a DNS Record
+                        
+clear
+	tput cup 10 30
+	echo -n "Enter the name of the server : "
+	read name
+	tput cup 11 30
+	echo -n "Enter The IP Address : "
+	read ip
+	tput cup 12 30
+	echo -n "Enter Your Email Address : "
+	read email
+	echo "zone \"$name\" {
+	type master;
+	file \"/var/named/$name.hosts\";
+	};" >> /etc/named.conf
+
+echo "
+\$ttl 38400
+$name.	IN	SOA	server. $email. (
+			120`date +%N | sed -n 's/000//p'` 
+			10800
+			3600
+			604800
+			38400 )
+$name.	IN	NS	server.
+$name.	IN	A	$ip" >>/var/named/$name.hosts
+	service named restart > /dev/null	
+	tput cup 15 30
+	echo "The DNS entry has been properly created." 
+	tput cup 16 30
+	
+	read 
+

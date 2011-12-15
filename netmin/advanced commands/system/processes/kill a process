@@ -1,0 +1,12 @@
+#!/bin/bash
+clear
+tput cup 5 20
+echo -e "\33[42m Enter The Process Name to be Killed  \33[0m"
+tput cup 5 58
+read k
+tput cup 10 20
+kill -9 `pidof $k`
+echo -e "\33[42m Process Has Been Killed  \33[0m"
+tput cup 30 20
+
+       read ;;

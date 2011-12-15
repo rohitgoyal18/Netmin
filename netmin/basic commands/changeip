@@ -1,0 +1,11 @@
+#!/bin/bash
+clear
+tput cup 5 15
+echo if you want to change ip then
+tput cup 8 
+echo "Give ip and  subnet mask will come after pressing tab (gateway ip         and  primary should  be blank) "
+echo Please wait..............   
+ sleep 5
+    netconfig
+    service network restart
+clear

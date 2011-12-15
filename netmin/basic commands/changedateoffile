@@ -1,0 +1,16 @@
+#!/bin/bash
+clear
+tput cup 5 15
+echo " Enter the date which you want to show for a file(not current) in formate of MMDDHHMMYYYY"
+   read date
+   date $date
+clear
+tput cup 5 15
+   echo "Enter the file or folder name which you want to change date "
+   read ne
+   touch $ne
+clear
+   echo "Enter the  current date in formate of MMDDHHMMYYYY"
+  read ra
+   date $ra
+

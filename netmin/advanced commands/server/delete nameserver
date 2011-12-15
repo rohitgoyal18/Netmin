@@ -1,0 +1,17 @@
+#!/bin/bash
+#code to delete a nameserver
+                              
+clear
+	tput cup 10 30
+	echo -n "Enter the name to delete :"
+	read name
+
+	sed /$name/,/\}\;/d /etc/named.conf > /root/bin/abc
+	cp  /root/bin/abc  /etc/named.conf
+	rm -rf /var/named/$name.hosts
+	service named restart >> /dev/null
+	tput cup 11 30
+	echo "The entry was successfully deleted."
+	tput cup 12 30
+	echo "Press enter to continue."
+	read
